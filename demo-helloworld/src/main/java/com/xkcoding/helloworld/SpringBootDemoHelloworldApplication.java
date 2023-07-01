@@ -28,6 +28,12 @@ public class SpringBootDemoHelloworldApplication {
      *
      * @param who 参数，非必须
      * @return Hello, ${who}
+     *
+     * http://localhost:8080/demo/hello
+     *
+     * http://localhost:8080/demo/hello?who=test1
+     *
+     *
      */
     @GetMapping("/hello")
     public String sayHello(@RequestParam(required = false, name = "who") String who) {
@@ -36,4 +42,5 @@ public class SpringBootDemoHelloworldApplication {
         }
         return StrUtil.format("Hello, {}!", who);
     }
+
 }
